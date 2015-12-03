@@ -1,0 +1,19 @@
+Concept: Take a rocket capable of accelerating at acceleration a, which is greater than gravity's acceleration, g. This rocket could in theory hover at full throttle by tilting itself so that vertical component of its thrust is exactly equal to the force of gravity. However, when tilted, it will accelerate sideways, which gives it an orbital velocity, which means that it tilts more to stay at the same altitude, which makes it accelerate faster, et. What is the θ(t) that describes how the rocket tilts?
+
+parameters: r = orbital radius
+            a = rocket acceleration, ax= orbital acceleration, ay=vertical acceleration
+            g = gravitational acceleration
+            θ = rocket angle
+            vx = orbital velocity
+
+cos(θ)= (ax)/a
+ay=g-(vx)^2/r
+sin(θ)=ay/a=(g-(vx)^2/r)/a
+θ = arcsin((g-(vx)^2/r)/a) //however, θ is a function of time, so it is more accurately written as:
+θ(t) = arcsin((g-(vx(t))^2/r)/a) since everything else is, for now, a constant. In the future, a is an independent function of time, and         for launches that increase in altitude, g and r change as well.
+ax = dvx/dt = a*cos(θ(t))
+ax = a*cos(arcsin(...)) = a*sqrt(1-...^2)
+   = a * sqrt(1-(g-vx(t)^2/r)^2/a^2)
+   = sqrt(a^2-(g-vx(t)^2/r)^2)
+Now I have an ODE as such:
+df/dt = sqrt(a^2-(g-f(t)^2/r)^2), which isn't easily solved. I hope to finish it up over winter break.
